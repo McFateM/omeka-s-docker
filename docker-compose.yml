@@ -37,7 +37,8 @@ services:
       - mariadb:db
     labels:
       - "traefik.backend=pma"
-      - "traefik.frontend.rule=Host:dgdocker2.grinnell.edu;PathPrefixStrip:/pma"
+      - "traefik.frontend.rule=Host:omeka-s.grinnell.edu;PathPrefixStrip:/pma"
+      # - "traefik.frontend.rule=Host:dgdocker2.grinnell.edu;PathPrefixStrip:/pma"
       # - "traefik.frontend.rule=Host:pma.localhost"
 
   omeka:
@@ -54,7 +55,8 @@ services:
       - omeka:/var/www/html/volume
     labels:
       - "traefik.backend=omeka"
-      - "traefik.frontend.rule=Host:dgdocker2.grinnell.edu;PathPrefix:/omeka-s"
+      - "traefik.frontend.rule=Host:omeka-s.grinnell.edu"
+      # - "traefik.frontend.rule=Host:dgdocker2.grinnell.edu;PathPrefix:/omeka-s"
       # - "traefik.frontend.rule=Host:omeka.localhost"
 
   # gramps:
